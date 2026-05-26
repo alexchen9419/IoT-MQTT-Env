@@ -15,6 +15,21 @@ services:
     networks:
       - mqtt-net
 
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node_red
+    restart: always
+    ports:
+      - "1880:1880"   # Node-RED 編輯器
+    volumes:
+      - ./node-red-data:/data
+    environment:
+      - TZ=Asia/Taipei
+    depends_on:
+      - mqtt-broker
+    networks:
+      - mqtt-net
+
 networks:
   mqtt-net:
     driver: bridge
