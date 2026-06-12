@@ -5,7 +5,7 @@ import paho.mqtt.client as mqtt
 from paho.mqtt.enums import CallbackAPIVersion
 
 BROKER = "localhost"
-MAC = "AA:BB:CC:DD:EE:FF"
+MAC = "11:22:33:44:55:66"
 
 
 def on_connect(client, userdata, connect_flags, reason_code, properties):
